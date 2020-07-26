@@ -1,0 +1,98 @@
+{% extends 'root/base.html' %}
+{% block main %}
+
+<div class="text-center mb-3">
+    <h4 class="d-inline font-Bahnschrift bg-info rounded p-2 text-light shadow">Admssion Form</h4>
+</div>
+{% include 'root/messages.html' %}
+
+{% load bootstrap4 %}
+<form method="POST" class="form mb-5" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-info">
+                <i class="fas fa-info-circle"></i> Please fill up form in UPPERCASE
+            </div>
+        </div>
+        <!-- SSC information -->
+        <div class="col-sm-12">
+            <h5 class="font-Bahnschrift text-secondary">Provide your SSC or equivalant exam information</h5>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_year size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_board size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_group size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_roll size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_reg size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.ssc_gpa size='small' %}
+        </div>
+        <!-- Personal Information -->
+        <div class="col-sm-12">
+            <h5 class="font-Bahnschrift text-secondary">Provide your Personal information</h5>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            {% bootstrap_field form.name size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.date_of_birth size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.phone size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.father_name size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.mother_name size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.gurdian_phone size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.blood_group size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.gender size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.nationality size='small' %}
+        </div>
+        <div class="col-sm-6 col-md-4">
+            {% bootstrap_field form.religion size='small' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            {% bootstrap_field form.present_address size='small' %}
+        </div>
+        <div class="col-sm-6">
+            {% bootstrap_field form.permanent_address size='small' %}
+        </div>
+        
+        <div class="col-sm-12">
+            <h5 class="font-Bahnschrift text-secondary">Choose your desired Course</h5>
+        </div>
+        <div class="col-sm-6">
+            {% bootstrap_field form.course size='small' %}
+        </div>
+        <div class="col-sm-6">
+            {% bootstrap_field form.image size='small' %}
+        </div>
+        {% comment %} Submit button {% endcomment %}
+        <div class="col-sm-12 text-right">
+            <button type="submit" class="btn btn-primary float-right">Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock main %}

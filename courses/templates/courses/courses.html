@@ -1,0 +1,31 @@
+{% extends 'root/base.html' %}
+{% block main %}
+<div class="row">
+    {% for course in courses %}
+        <div class="col-sm-12 col-md-6 py-3">
+            <div class="card" style="height: 100%;">
+                <div class="overflow-hidden">
+                    {% if course.image %}
+                    <img src="{{course.image.url}}" alt="Course Image" class="card-img-top zoom">
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title font-Bahnschrift text-dark text-center">{{course.name}}</h4>
+                    <table class="table table-bordered shadow text-secondary font-weight-bold">
+                        <tr>
+                            <td>Course Duration:</td>
+                            <td>{{course.duration}}</td>
+                        </tr>
+                        <tr>
+                            <td>Course Code:</td>
+                            <td>{{course.code}}</td>
+                        </tr>
+                    </table>
+                    <p class="card-text ban">{{course.description|safe|truncatewords:"30"}}</p>
+                    <a href="{% url 'view_course' course.code %}" class="card-link btn btn-outline-info">View Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock main %}

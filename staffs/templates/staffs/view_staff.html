@@ -1,0 +1,86 @@
+{% extends 'account/base.html' %}
+{% block content %}
+
+<div class="container mb-3">
+    <div class="row">
+        {% if staff.staffprofile.image %}
+        <div class="col">
+            <img src='{{staff.staffprofile.image.url}}' alt="Staff Image" width=180 class="img-thumbnail">
+        </div>
+        {% endif %}
+        <div class="col">
+            <div class="mb-2">
+                <a href="{% url 'confirm_remove_staff' staff.id %}" class="text-danger">
+                    <i class="fas fa-trash-alt"></i> Remove Staff
+                </a>
+                {% if staff.staffprofile %}
+                <br>
+                <a href="{% url 'change_staff_image' staff.id %}" class="text-info"><i
+                    class="fas fa-edit"></i> Change Image
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<h5 class="font-Bahnschrift">
+    Academic Information
+    <a href="{% url 'edit_staff' staff.id %}" class="text-dark ml-2">
+        <i class="fas fa-edit fa-sm"></i>
+    </a>
+</h5>
+<table class="table table-sm table-bordered text-dark fixed-layout table-responsive-sm">
+    <tr>
+        <td>Identity</td>
+        <td>{{staff.identity}}</td>
+        <td>Name</td>
+        <td>{{staff.name}}</td>
+    </tr>
+    <tr>
+        <td>Role</td>
+        <td>{{staff.role}}</td>
+        <td>Designation</td>
+        <td>{{staff.designation}}</td>
+    </tr>
+</table>
+
+
+{% if staff.staffprofile %}
+<h5 class="font-Bahnschrift">
+    Personal Information
+    <a href="{% url 'change_staff_personal_info' staff.id %}" class="text-dark ml-2">
+        <i class="fas fa-edit fa-sm"></i>
+    </a>
+</h5>
+<table class="table table-sm table-bordered text-dark fixed-layout table-responsive-sm">
+    <tr>
+        <td>Staff's Phone</td>
+        <td>{{staff.staffprofile.phone}}</td>
+        <td scope="row">Date of birth</td>
+        <td>{{staff.staffprofile.date_of_birth}}</td>
+    </tr>
+    <tr>
+        <td scope="row">Nationality</td>
+        <td>{{staff.staffprofile.nationality}}</td>
+        <td scope="row">Religion</td>
+        <td>{{staff.staffprofile.religion}}</td>
+    </tr>
+    <tr>
+        <td scope="row">Gender</td>
+        <td>{{staff.staffprofile.gender}}</td>
+        <td>Blood Group</td>
+        <td>{{staff.staffprofile.blood_group}}</td>
+    </tr>
+    <tr>
+        <td scope="row">Present Address</td>
+        <td colspan="3">{{staff.staffprofile.present_address}}</td>
+    </tr>
+    <tr>
+        <td scope="row">Permanent Address</td>
+        <td colspan="3">{{staff.staffprofile.permanent_address}}</td>
+    </tr>
+</table>
+{% endif %}
+
+{% endblock %}

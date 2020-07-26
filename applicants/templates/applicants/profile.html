@@ -1,0 +1,99 @@
+{% extends 'applicants/base.html' %}
+{% block content %}
+{% if applicant %}
+<div>Refference: <strong>{{applicant.id}}</strong></div>
+<div><strong>Next step:</strong> You have to pay admission fee to complete your admission</div>
+
+<div class="container mt-2">
+    <table class="table table-striped table-bordered table-inversed table-sm">
+        <thead>
+            <tr>
+                <th>Particulars</th>
+                <th>Amount (Taka)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Admission Fee</td>
+                <td>6000/=</td>
+            </tr>
+            <tr>
+                <td scope="row">ID Card</td>
+                <td>100/=</td>
+            </tr>
+            <tr>
+                <td scope="row">Lab Fee</td>
+                <td>200/=</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr class="table-info">
+                <td>Total</td>
+                <td>6300/=</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="my-3">You can make payment by-</div>
+
+<div id="accordion" class="container mb-3">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    Cash
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body text-secondary">
+                You can simply come to our admission controller office and pay cash
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    X-cash
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body text-secondary">
+                <p>Our X-cash payment number is xxxxxxxxxxx</p>
+                <p class="text-info">Please give refference <strong>{{applicant.id}}</strong> when payment</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    Y-cash
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body text-secondary">
+                <p>Our Y-cash payment number is xxxxxxxxxxx</p>
+                <p class="text-info">Please give refference <strong>{{applicant.id}}</strong> when payment</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="alert alert-secondary" role="alert">
+    <div class="alert alert-warning" role="alert">
+        <strong>No information</strong>
+        <p><i class="fas fa-arrow-left"></i><a href="{% url 'admission' %}"> Go back</a></p>
+    </div>
+</div>
+{% endif %}
+{% endblock content %}

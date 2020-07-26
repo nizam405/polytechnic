@@ -1,0 +1,30 @@
+{% extends 'root/base.html' %}
+{% block main %}
+
+<div class="text-center mb-3">
+    <a href="{% url 'applicant-profile' %}" class="float-left text-info">
+        <i class="fas fa-lg fa-arrow-circle-left"></i>
+    </a>
+    <h4 class="d-inline font-Bahnschrift bg-info rounded p-2 text-light shadow">Admssion Form</h4>
+</div>
+{% include 'root/messages.html' %}
+
+{% load bootstrap4 %}
+<form action="" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' size='small' %}
+    {% buttons submit='Submit' reset='Reset' %} {% endbuttons %}
+</form>
+
+
+<div class="text-info">
+    <i class="fas fa-info-circle"></i>
+    This form will collect your SSC or equivalent information from Educationboard website. If you face any problem your should follow these instruction - 
+    <ol>
+        <li>Check your information if incorrect</li>
+        <li>If Educationboard server doesn't respond, try to <a href="{% url 'admission-form' %}">fill up form manually</a></li>
+    </ol>
+</div>
+<div>Fill-up <a href="{% url 'admission-form1' %}">Step by step form</a></div>
+
+{% endblock main %}

@@ -1,0 +1,104 @@
+<h5 class="font-Bahnschrift text-dark">Academic Information</h5>
+<table class="table table-sm text-secondary">
+    <tbody>
+        <tr>
+            <td scope="row">Identity</td>
+            <td>{{user.stdlink.student.identity}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Batch</td>
+            <td>{{user.stdlink.student.applicant.batch.batch_no}}</td>
+        </tr>
+        <tr>
+            <td scope="row">session</td>
+            <td>{{user.stdlink.student.applicant.batch.session}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Regulation</td>
+            <td>{{user.stdlink.student.applicant.batch.regulation}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Course</td>
+            <td>{{user.stdlink.student.applicant.course}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Semester</td>
+            <td>{{user.stdlink.student.semester.name}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Class Roll</td>
+            <td>{{user.stdlink.student.class_roll}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Board Roll</td>
+            <td>{{user.stdlink.student.roll}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Registration</td>
+            <td>{{user.stdlink.student.registration}}</td>
+        </tr>
+    </tbody>
+</table>
+<h5 class="font-Bahnschrift text-dark">Personal Information
+    <a href="{% url 'student_personal_info_change' %}" class="ml-2 text-info">
+        <i class="fas fa-edit"></i>
+    </a>
+</h5>
+<table class="table table-sm text-secondary">
+    <tbody>
+        <tr>
+            <td scope="row">Name (As Registration)</td>
+            <td>{{user.stdlink.student.applicant.name}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Username</td>
+            <td>{{user.username}}</td>
+        </tr>
+        {% if user.stdlink.student %}
+        <tr>
+            <td scope="row">Father's Name</td>
+            <td>{{user.stdlink.student.applicant.father_name}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Mother's Name</td>
+            <td>{{user.stdlink.student.applicant.mother_name}}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td scope="row">Email</td>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Phone</td>
+            <td>{{user.stdlink.student.applicant.phone}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Date of birth</td>
+            <td>{{user.stdlink.student.applicant.date_of_birth}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Nationality</td>
+            <td>{{user.stdlink.student.applicant.nationality}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Religion</td>
+            <td>{{user.stdlink.student.applicant.religion}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Gender</td>
+            <td>{{user.stdlink.student.applicant.gender}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Blood Group</td>
+            <td>{{user.stdlink.student.applicant.blood_group}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Present Address</td>
+            <td>{{user.stdlink.student.applicant.present_address}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Permanent Address</td>
+            <td>{{user.stdlink.student.applicant.permanent_address}}</td>
+        </tr>
+    </tbody>
+</table>

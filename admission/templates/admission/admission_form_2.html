@@ -1,0 +1,67 @@
+{% extends 'root/base.html' %}
+{% block main %}
+<div class="text-center mb-3">
+    <a href="{% url 'applicant-profile' %}" class="float-left text-info">
+        <i class="fas fa-lg fa-arrow-circle-left"></i>
+    </a>
+    <h4 class="d-inline font-Bahnschrift bg-info rounded p-2 text-light shadow">Admssion Form</h4>
+</div>
+
+<div class="text-center">
+    <div class="bar-num bg-success text-light font-weight-bold">1</div>
+    <div class="bar bg-success"></div>
+    <div class="bar-num bg-light text-info font-weight-bold shadow-sm">2</div>
+    <div class="bar"></div>
+    <div class="bar-num text-secondary">3</div>
+</div>
+
+<form method="POST" class="form mb-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% load bootstrap4 %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h5>Provide your personal information</h5>
+        </div>
+        {% for field in form %}
+            <div class="col-sm-6">
+                {% bootstrap_field field size='small' %}
+            </div>
+        {% endfor %}
+    </div>
+    {% buttons submit='Next' reset="Reset" %} {% endbuttons %}
+</form>
+
+<h4>Collected from Educationboard</h4>
+<table class="table table-stripped table-bordered table-sm">
+    <tr>
+        <td>Name</td>
+        <td>{{data.name}}</td>
+        <td>Date of birth</td>
+        <td>{{data.date_of_birth}}</td>
+    </tr>
+    <tr>
+        <td>Father</td>
+        <td>{{data.father_name}}</td>
+        <td>Mother</td>
+        <td>{{data.mother_name}}</td>
+    </tr>
+    <tr>
+        <td>Passing year (SSC)</td>
+        <td>{{data.ssc_year}}</td>
+        <td>Board</td>
+        <td>{{data.ssc_board}}</td>
+    </tr>
+    <tr>
+        <td>Roll</td>
+        <td>{{data.ssc_roll}}</td>
+        <td>Registion</td>
+        <td>{{data.ssc_reg}}</td>
+    </tr>
+    <tr>
+        <td>Group</td>
+        <td>{{data.ssc_group}}</td>
+        <td>GPA</td>
+        <td>{{data.ssc_gpa}}</td>
+    </tr>
+</table>
+{% endblock main %}

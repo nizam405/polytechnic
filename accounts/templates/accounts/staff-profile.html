@@ -1,0 +1,63 @@
+<div class="text-center">
+    <img src="{{user.staffprofile.image.url}}" alt="Profile Picture" width="200">
+    <div class="text-info">
+        <i class="fas fa-edit"></i>
+        <a href="{% url 'profile_picture' %}" class="text-info">Change</a>
+    </div>
+</div>
+
+<h5 class="font-Bahnschrift text-dark">Academic Information</h5>
+<table class="table table-sm text-secondary">
+    <tbody>
+        <tr>
+            <td scope="row">Identity</td>
+            <td>{{user.staffprofile.staff.identity}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Designation</td>
+            <td>{{user.staffprofile.staff.designation}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<h5 class="font-Bahnschrift text-dark">Personal Information
+    <a href="{% url 'update_staff' %}" class="ml-3 text-info">
+        <i class="fas fa-edit"></i>
+    </a>
+</h5>
+<table class="table table-sm text-secondary">
+    <tbody>
+        <tr>
+            <td scope="row">Phone</td>
+            <td>{{user.staffprofile.phone}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Date of birth</td>
+            <td>{{user.staffprofile.date_of_birth}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Nationality</td>
+            <td>{{user.staffprofile.nationality}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Religion</td>
+            <td>{{user.staffprofile.religion}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Gender</td>
+            <td>{{user.staffprofile.gender}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Blood Group</td>
+            <td>{{user.staffprofile.blood_group}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Present Address</td>
+            <td>{{user.staffprofile.present_address}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Permanent Address</td>
+            <td>{{user.staffprofile.permanent_address}}</td>
+        </tr>
+    </tbody>
+</table>

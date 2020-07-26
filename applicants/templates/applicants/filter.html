@@ -1,0 +1,16 @@
+
+    {% load bootstrap4 %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            {% for field in form %}
+            <div class="col">
+                {% bootstrap_field field layout='horizontal' size='small' %}
+            </div>
+            {% endfor %}
+            <div class="col">
+                {% bootstrap_button 'Filter' size='sm' button_type='submit' %}
+            </div>
+        </div>
+    </form>
+

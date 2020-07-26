@@ -1,0 +1,52 @@
+{% load bootstrap4 %}
+<form method="post">
+    {% csrf_token %}
+    <div class='row'>
+        {% if column == '2' %}
+            {% for field in form %}
+                <div class='col-sm-6'>
+                    {% bootstrap_field field layout=form_layout size=form_size %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class='col-sm-12'>
+                {% bootstrap_form form layout=form_layout size=form_size %}
+            </div>
+        {% endif %}
+        <div class='col-sm-12'>
+            {% if submit_content %}
+                {% bootstrap_button submit_content button_type='submit' button_class='btn-outline-success' size=button_size %}
+            {% else %}
+                {% bootstrap_button "Submit" button_type='submit' button_class='btn-outline-success' size=button_size %}
+            {% endif %}
+            {% if reset_content %}
+                {% bootstrap_button reset_content button_type='reset' button_class='btn-outline-secondary' size=button_size %}
+            {% endif %}
+            {% if skip_content %}
+                {% bootstrap_button skip_content button_type='link' button_class='btn-outline-secondary' href=skip_href size=button_size %}
+            {% endif %}
+        </div>
+    </div>
+</form>
+<script>
+    function enable_buttons(){
+        $('button[type="submit"]').prop('disabled', false);
+        $('button[type="reset"]').prop('disabled', false);
+    }
+
+    function disable_buttons(){
+        $('button[type="submit"]').prop('disabled', true);
+        $('button[type="reset"]').prop('disabled', true);
+    }
+    {% if enable_buttons %}
+        enable_buttons();
+    {% else %}
+        disable_buttons();
+    {% endif %}
+    $('button[type="reset"]').click(function(){
+        disable_buttons();
+    });
+    $('input').on('keyup change', function(){
+        enable_buttons();
+    });
+</script>

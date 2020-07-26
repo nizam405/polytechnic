@@ -1,0 +1,19 @@
+{% include 'root/header.html' %}
+<!-- Main section -->
+<main role="main">
+    {% include 'root/messages.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 border-right" id='sidebar'>
+                {% include 'account/sidebar.html' %}
+            </div>
+            <div class="col-md-9 pt-3 pt-md-0">
+                <div class="container-fluid">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'root/footer.html' %}

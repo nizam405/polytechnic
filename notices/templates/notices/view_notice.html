@@ -1,0 +1,25 @@
+{% extends 'root/base.html' %}
+{% block main %}
+<div class="my-2">
+    <a href="{% url 'all-notices' %}"><i class="fas fa-arrow-circle-left"></i> Go Back</a>
+</div>
+<h4>{{notice.title}}</h4>
+<div class="text-secondary">Created: {{notice.date_created}}</div>
+<div class="text-secondary">Last Modified: {{notice.date_modified}}</div>
+<div class="text-secondary">Posted By: {{notice.author}}</div>
+
+<div class="notice-content my-3">
+    <sup class="mr-1"><i class="fas fa-quote-left"></i></sup>
+    {{notice.content}}
+    <sup class="ml-1"><i class="fas fa-quote-right"></i></sup>
+</div>
+
+{% if attachments %}
+<div>
+    <div>Downloads:</div>
+    {% for file in attachments %}
+        <div class="ml-3"><a href="{{file.attachment.url}}">{{file.subject}}</a></div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock main %}

@@ -1,0 +1,19 @@
+
+<div class="mb-3">Application Status:
+    {% if applicant.verified %}
+        <span class='text-success'>Verified
+            <i class="fas fa-check-circle"></i>
+        </span>
+    {% else %}
+        <span class='text-danger'>Unverified
+            <i class="fas fa-check-circle"></i>
+        </span>
+        <a href="{% url 'verify_applicant' applicant.id %}">Verify now</a>
+    {% endif %}
+    {% if page_name != 'edit_applicant' %}
+        <a href="{% url 'edit_applicant' applicant.id %}" class="btn btn-sm btn-outline-info ml-2">Edit</a>
+    {% endif %}
+    {% if page_name != 'confirm_reject_applicant' %}
+        <a href="{% url 'confirm_reject_applicant' applicant.id %}" class="btn btn-sm btn-outline-danger ml-2">Reject</a>
+    {% endif %}
+</div>

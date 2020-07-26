@@ -1,0 +1,23 @@
+{% extends 'root/base.html' %}
+{% block main %}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Notices</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for notice in notices %}
+        <tr class="notice">
+            <td scope="row">
+                <a href="{% url 'view-notice' notice.id %}">
+                    <i class="fas fa-chevron-right"></i> {{notice.title}} - 
+                    <i class="text-info">{{notice.date_modified}}</i>
+                    <span class="text-secondary">by - {{notice.author}}</span>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock main %}

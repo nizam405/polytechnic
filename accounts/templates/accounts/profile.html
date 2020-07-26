@@ -1,0 +1,10 @@
+{% extends 'account/base.html' %}
+{% block content %}
+
+{% if user.staffprofile %}
+    {% include 'account/staff-profile.html' %}
+{% elif user.stdlink.student %}
+    {% include 'account/student-profile.html' %}
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'root/base.html' %}
+{% block main %}
+
+{% include 'root/messages.html' %}
+
+<div class="row">
+    <div class="col-lg-3 col-md-2"></div>
+
+    <div class="col-lg-6 col-md-8">
+        <h2 class="text-center mb-3">Stay conected</h2>
+        {% include 'root/base_form.html' %}
+    </div>
+
+    <div class="col-lg-3 col-md-2"></div>
+    <div class="col-12 text-center text-secondary mt-3">
+        I am an Applicant. <a href="{% url 'admission' %}">Go to applicant login</a>
+        <br>
+        {% if page_name == 'login' %}
+            Need an account? <a href="{% url 'signup' %}">Signup</a>
+        {% elif page_name == 'signup' %}
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock main %}

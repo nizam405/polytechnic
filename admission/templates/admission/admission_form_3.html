@@ -1,0 +1,33 @@
+{% extends 'root/base.html' %}
+{% block main %}
+<h5>Upload your Image</h5>
+
+<div class="text-center mb-3">
+    <a href="{% url 'applicant-profile' %}" class="float-left text-info">
+        <i class="fas fa-lg fa-arrow-circle-left"></i>
+    </a>
+    <h4 class="d-inline font-Bahnschrift bg-info rounded p-2 text-light shadow">Admssion Form</h4>
+</div>
+
+<div class="text-center">
+    <div class="bar-num bg-success text-light font-weight-bold">1</div>
+    <div class="bar bg-success"></div>
+    <div class="bar-num bg-success text-light font-weight-bold">2</div>
+    <div class="bar bg-success"></div>
+    <div class="bar-num bg-light text-info font-weight-bold shadow-sm">3</div>
+</div>
+
+<form method="POST" class="form mb-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% load bootstrap4 %}
+    {% bootstrap_form form %}
+    {% buttons submit='Upload' %} {% endbuttons %}
+
+    <script>
+        $('button[type="submit"]').prop('disabled', true);
+        $('input#id_image').change(function(){
+            $('button[type="submit"]').prop('disabled', false);
+        });
+    </script>
+</form>
+{% endblock main %}

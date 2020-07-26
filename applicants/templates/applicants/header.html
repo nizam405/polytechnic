@@ -1,0 +1,44 @@
+
+<table class="text-center">
+    <tr>
+        {% if page != 'profile' %}
+        <td>
+            <a href="{% url 'applicant-profile' %}" class="btn btn-sm btn-outline-info mr-2">
+                <i class="fas fa-lg fa-home mr-2"></i> Dashboard
+            </a>
+        </td>
+        {% endif %}
+        {% if page != 'view_form' %}
+        <td>
+            <a class="btn btn-sm btn-outline-secondary mr-2" href="{% url 'applicant_view_application'%}" role="button">View Application Form</a>
+        </td>
+        {% endif %}
+        {% if page != 'edit_info' %}
+        <td>
+            <a class="btn btn-sm btn-outline-info mr-2" href="{% url 'applicant_edit_form'%}" role="button">Edit Information</a>
+        </td>
+        {% endif %}
+        {% if page != 'profile_pic' %}
+        <td>
+            <a class="btn btn-sm btn-outline-info mr-2" href="{% url 'applicant-image'%}" role="button">Change Image</a>
+        </td>
+        {% endif %}
+        {% if page != 'delete_application' %}
+        <td>
+            <a class="btn btn-sm btn-outline-danger mr-2" href="{% url 'confirm-delete-form'%}" role="button">Cancel Applicaton</a>
+        </td>
+        {% endif %}
+    </tr>
+</table>
+<div class="mb-3">Application Status:
+    {% if applicant.verified %}
+        <span class='text-success'>Verified
+            <i class="fas fa-check-circle"></i>
+        </span>
+    {% else %}
+        <span class='text-danger'>Unverified
+            <i class="fas fa-check-circle"></i>
+        </span>
+        <a href="{% url 'verify-form' %}">Verify now</a>
+    {% endif %}
+</div>

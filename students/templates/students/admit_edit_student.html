@@ -1,0 +1,18 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<h5 class="font-Bahnschrift text-dark">{{header}}</h5>
+{% include 'root/base_form.html' %}
+
+<script>
+    var identity = $('#id_identity').val();
+    function auto_identity(){
+        var class_roll  = $('#id_class_roll').val();
+        $('#id_identity').val(identity.substr(0,8)+class_roll)
+    }
+    auto_identity();
+    $('#id_class_roll').on('keyup change', function(){
+        auto_identity();
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,354 @@
+[
+{
+    "model": "course.semester",
+    "pk": 1,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "1st",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 2,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "2nd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 3,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "3rd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 4,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "4th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 5,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "5th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 6,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "6th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 7,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "7th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 8,
+    "fields": {
+        "course": 1,
+        "duration": "6 Months",
+        "name": "8th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 9,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "1st",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 10,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "2nd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 11,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "3rd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 12,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "4th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 13,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "5th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 14,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "6th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 15,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "7th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 16,
+    "fields": {
+        "course": 2,
+        "duration": "6 Months",
+        "name": "8th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 17,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "1st",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 18,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "2nd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 19,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "3rd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 20,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "4th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 21,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "5th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 22,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "6th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 23,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "7th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 24,
+    "fields": {
+        "course": 3,
+        "duration": "6 Months",
+        "name": "8th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 25,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "1st",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 26,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "2nd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 27,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "3rd",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 28,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "4th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 29,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "5th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 30,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "6th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 31,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "7th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+},
+{
+    "model": "course.semester",
+    "pk": 32,
+    "fields": {
+        "course": 4,
+        "duration": "6 Months",
+        "name": "8th",
+        "semester_fee": 3000,
+        "monthly_fee": 2000
+    }
+}
+]

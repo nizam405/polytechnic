@@ -1,0 +1,149 @@
+<!-- Side Nav -->
+<!-- Name -->
+<div class="text-center font-Bahnschrift">
+    {% if user.stdlink.student %}
+    {% if user.first_name %}
+    <h5>{{user.first_name}} {{user.last_name}}</h5>
+    {% else %}
+    <h5>{{user.stdlink.student.applicant.name}}</h5>
+    {% endif %}
+    {% else %}
+    <h5>{{user.first_name}} {{user.last_name}}</h5>
+    {% endif %}
+</div>
+<div class="line">
+    <hr class="mb-0 mt-2 mb-md-2">
+</div>
+<!-- Admission group -->
+{% if user.is_staff and user.staffprofile.staff.role == 'Controller' %}
+<div>
+    <a class="nav-item nav-link font-Bahnschrift
+    {% if menu_header == 'admission' %}active-parent{% endif %}" 
+    data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+        Admission
+    </a>
+</div>
+<div class="collapse show-md" id="collapse-1">
+    <a class="nav-item nav-link {% if menu == 'applicant_list' %}active{% endif %}"
+        href="{% url 'applicant_list' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-address-card fa-lg"></i></div>
+            <div class="col-10">Applicants</div>
+        </div>
+    </a>
+</div>
+<div class="line">
+    <hr class="m-0 m-md-2">
+</div>
+{% endif %}
+<!-- Academic group -->
+{% if user.is_staff and user.staffprofile.staff.role == 'Controller' %}
+<div>
+    <a class="nav-item nav-link font-Bahnschrift
+    {% if menu_header == 'academic' %}active-parent{% endif %}" 
+    data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+        Academic
+    </a>
+</div>
+<div class="collapse show-md" id="collapse-1">
+    <a class="nav-item nav-link {% if menu == 'students_list' %}active{% endif %}"
+        href="{% url 'students_list' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-user-graduate fa-lg"></i></div>
+            <div class="col-10">Students</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link {% if menu == 'staff_list' %}active{% endif %}"
+        href="{% url 'staff_list' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-address-card fa-lg"></i></div>
+            <div class="col-10">Staffs</div>
+        </div>
+    </a>
+</div>
+<div class="line">
+    <hr class="m-0 m-md-2">
+</div>
+{% endif %}
+<!-- Account group -->
+<div>
+    <a class="nav-item nav-link font-Bahnschrift
+    {% if menu_header == 'account' %}active-parent{% endif %}" 
+    data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+        Account
+    </a>
+</div>
+<div class="collapse show-md" id="collapse-2">
+    <a class="nav-item nav-link {% if menu == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-tachometer-alt fa-lg"></i></div>
+            <div class="col-10">Dashboard</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link {% if menu == 'account' %}active{% endif %}" href="{% url 'user_account' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-sliders-h fa-lg"></i></div>
+            <div class="col-10">Account</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link {% if menu == 'profile' %}active{% endif %}" href="{% url 'user_profile' %}">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-user fa-lg"></i></div>
+            <div class="col-10">Profile</div>
+        </div>
+    </a>
+    {% if user.is_superuser %}
+    <a class="nav-item nav-link" href="/admin/">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fab fa-python fa-lg"></i></div>
+            <div class="col-10">Django Admin</div>
+        </div>
+    </a>
+    {% endif %}
+</div>
+<div class="line">
+    <hr class="m-0 m-md-2">
+</div>
+<!-- Study -->
+<div>
+    <a class="nav-item nav-link font-Bahnschrift
+    font-Bahnschrift {% if menu_header == 'study' %}active-parent{% endif %}" 
+    data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+        Study
+    </a>
+</div>
+<div class="collapse show-md" id="collapse-3">
+    <a class="nav-item nav-link" href="">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-book fa-lg"></i></div>
+            <div class="col-10">Subjects</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link" href="">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-poll fa-lg"></i></div>
+            <div class="col-10">Results</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link" href="">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-columns fa-lg"></i></div>
+            <div class="col-10">Class Routine</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link" href="">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-book-reader fa-lg"></i></div>
+            <div class="col-10">Course Plan</div>
+        </div>
+    </a>
+    <a class="nav-item nav-link" href="">
+        <div class="row">
+            <div class="col-2 text-center"><i class="fas fa-calendar-alt fa-lg"></i></div>
+            <div class="col-10">Academic Calender</div>
+        </div>
+    </a>
+</div>
+<div class="line">
+    <hr class="m-0 m-md-2">
+</div>

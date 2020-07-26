@@ -1,0 +1,21 @@
+{% extends extends_file %}
+{% block content %}
+<h5>{{heading}}</h5>
+
+<div class="profile-pic-form-container">
+    <img src="{{src}}" alt="Profile Picture" width="200">
+    <form method="POST" class="form mb-5" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% load bootstrap4 %}
+        {% bootstrap_form form %}
+        {% buttons submit='Upload' %} {% endbuttons %}
+
+        <script>
+            $('button[type="submit"]').prop('disabled', true);
+            $('input#id_image').change(function(){
+                $('button[type="submit"]').prop('disabled', false);
+            });
+        </script>
+    </form>
+</div>
+{% endblock content %}

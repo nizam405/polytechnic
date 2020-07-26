@@ -1,0 +1,22 @@
+{% extends 'account/base.html' %}
+{% block content %}
+
+<h5 class="font-Bahnschrift text-dark">Change Profile Picture</h5>
+
+<div class="profile-pic-form-container">
+    <img id="profile-picture" class="img-thumbnail" src="{{ user.staffprofile.image.url }}" alt="Image show here">
+    {% load bootstrap4 %}
+    <form method="POST" class="my-3" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form show_label=False %}
+        {% buttons submit='Upload' %} {% endbuttons %}
+
+        <script>
+            $('button[type="submit"]').prop('disabled', true);
+            $('input#id_image').change(function(){
+                $('button[type="submit"]').prop('disabled', false);
+            });
+        </script>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'root/base.html' %}
+{% block main %}
+{% if course.image %}
+    <img src="{{course.image.url}}" class="img-fluid mb-2" alt="">
+{% endif %}
+<h1>{{course.name}}</h1>
+<div class="row">
+    <div class="col-sm-6 col-lg-8"></div>
+    <div class="col-sm-6 col-lg-4">
+        <table class="table table-bordered mt-3 shadow">
+            <tr>
+                <td><strong>Course Duration:</strong></td>
+                <td>{{course.duration}}</td>
+            </tr>
+            <tr>
+                <td><strong>Course Code:</strong></td>
+                <td>{{course.code}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<p class="ban">{{course.description}}</p>
+{% endblock main %}

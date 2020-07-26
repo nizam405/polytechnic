@@ -1,0 +1,91 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+
+{% include 'applicants/applicant_header.html' %}
+
+<div class="shadow-sm p-5 bg-paper">
+    <div class="row text-dark mb-2">
+        <div class="col">
+            <h5>({{applicant.course.code}}) {{applicant.course.name}}</h5>
+            <div>[{{applicant.course.course_type}}]</div>
+            <div>Batch: {{applicant.batch.batch_no}}</div>
+            <div>Session : {{applicant.batch.session}}</div>
+            <div>Submission Date: {{applicant.sub_date}}</div>
+        </div>
+        <div  class="col text-right">
+            <div class="text-center d-inline-block">
+                {% if applicant.image %}
+                <img src='{{applicant.image.url}}' alt="Applicant Image" width=180 class="img-thumbnail">
+                <br>
+                {% endif %}
+                <a href="{% url 'change_applicant_image' applicant.id %}" class="text-info"><i class="fas fa-edit"></i> Change Image</a>
+            </div>
+        </div>
+    </div>
+
+    <h5 class="font-Bahnschrift">Personal Information</h5>
+    <table class="table table-sm table-bordered text-dark fixed-layout table-responsive-sm">
+        <tr>
+            <td>Student Name</td>
+            <td>{{applicant.name}}</td>
+            <td>Student's Phone</td>
+            <td>{{applicant.phone}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Date of birth</td>
+            <td>{{applicant.date_of_birth}}</td>
+            <td>Gurdian's Phone</td>
+            <td>{{applicant.gurdian_phone}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Father's Name</td>
+            <td>{{applicant.father_name}}</td>
+            <td scope="row">Nationality</td>
+            <td>{{applicant.nationality}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Mother's Name</td>
+            <td>{{applicant.mother_name}}</td>
+            <td scope="row">Religion</td>
+            <td>{{applicant.religion}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Gender</td>
+            <td>{{applicant.gender}}</td>
+            <td>Blood Group</td>
+            <td>{{applicant.blood_group}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Present Address</td>
+            <td colspan="3">{{applicant.present_address}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Permanent Address</td>
+            <td colspan="3">{{applicant.permanent_address}}</td>
+        </tr>
+    </table>
+
+    <h5 class="font-Bahnschrift">Educational Backgorund (SSC or equivalent)</h5>
+    <table class="table table-sm table-bordered text-dark fixed-layout table-responsive-sm">
+        <tr>
+            <td scope="row">Board</td>
+            <td>{{applicant.ssc_board}}</td>
+            <td scope="row">Year</td>
+            <td>{{applicant.ssc_year}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Roll</td>
+            <td>{{applicant.ssc_roll}}</td>
+            <td scope="row">Registration</td>
+            <td>{{applicant.ssc_reg}}</td>
+        </tr>
+        <tr>
+            <td scope="row">Group</td>
+            <td>{{applicant.ssc_group}}</td>
+            <td scope="row">GPA/CGPA</td>
+            <td>{{applicant.ssc_gpa}}</td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

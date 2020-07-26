@@ -1,0 +1,11 @@
+{% include 'root/header.html' %}
+<!-- Main section -->
+<main role="main" class="mb-3">
+    <div class="container-lg">
+        {% include 'applicant/header.html' %}
+        {% block content %}
+        {% endblock content %}
+    </div>
+</main>
+{% include 'root/footer.html' %}
+

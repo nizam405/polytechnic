@@ -1,0 +1,30 @@
+{% extends 'root/base.html' %}
+{% block main %}
+{% if applicant %}
+
+<div class="text-center">
+    <div class="bar-num bg-success text-light font-weight-bold">1</div>
+    <div class="bar bg-success"></div>
+    <div class="bar-num bg-success text-light font-weight-bold">2</div>
+    <div class="bar bg-success"></div>
+    <div class="bar-num bg-success text-light font-weight-bold">3</div>
+</div>
+<div class="container mt-3">
+    <div class="alert alert-success" role="alert">
+        <div><strong>Hi, {{applicant.name}}. Your Application Submitted Successfully</strong></div>
+        <div>Your refference number is <strong>{{applicant.id}}</strong>. Use refference for payment. Don't share your information with others</div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="{% url 'applicant-profile' %}" class="btn btn-primary">Go to profile</a>
+</div>
+ 
+{% else %}
+<div class="alert alert-warning" role="alert">
+    <strong>Something went wrong!</strong>
+    <a href="{% url 'admission-form' %}">Go to Admission Form page</a>
+</div>
+{% endif %}
+
+{% endblock main %}

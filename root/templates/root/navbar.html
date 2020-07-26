@@ -1,0 +1,89 @@
+<header class="border-bottom sticky-top mb-3" id="header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-lg">
+            <a href="{% url 'home' %}" class="navbar-brand">Polytechnic Institute</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% if page_name == 'home' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+                    </li>
+                    <li class="nav-item {% if page_name == 'course' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'courses' %}">COURSES</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            COURSES
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <h6 class="dropdown-header">Diploma in Engineering</h6>
+            {% for course in courses %}
+            {% if course.course_type == "Diploma" %}
+                <a class="dropdown-item" href="{% url 'view_course' course.code %}">{{course.name}}</a>
+            {% endif %}
+            {% endfor %}
+            </div>
+        </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'admission' %}active{% endif %}"
+                            href="{% url 'admission' %}">ADMISSION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'about' %}active{% endif %}"
+                            href="{% url 'about' %}">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'notice' %}active{% endif %}"
+                            href="{% url 'all-notices' %}">NOTICES</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    {% if request.session.applicant_id %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'applicant-profile' %}">
+                            {% if applicant.image %}
+                            <img src="{{applicant.image.url}}" class="rounded" style="height: 23px;">
+                            {% endif %}
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'applicant-logout' %}">Logout</a>
+                    </li>
+                    {% elif user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'dashboard' %}active{% endif %}"
+                            href="{% url 'dashboard' %}">
+                            {% if user.staffprofile.image %}
+                            <img src="{{user.staffprofile.image.url}}" class="rounded" style="height: 23px;">
+                            {% elif user.stdlink.image %}
+                            <img src="{{user.stdlink.student.applicant.image.url}}" class="rounded"
+                                style="height: 23px;">
+                            {% endif %}
+                            {{user.username}}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'login' %}active{% endif %}"
+                            href="{% url 'login' %}">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if page_name == 'signup' %}active{% endif %}"
+                            href="{% url 'signup' %}">SIGNUP</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

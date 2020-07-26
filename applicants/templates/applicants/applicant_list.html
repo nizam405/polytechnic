@@ -1,0 +1,47 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<h5 class="font-Bahnschrift text-dark">Applicants list</h5>
+
+{% include 'applicants/filter.html' %}
+
+<table class="table table-striped table-inverse">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Phone</th>
+            <th>Verified</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for applicant in applicants %}
+            <tr>
+                <td>
+                    <img src="{{applicant.image.url}}" width="50">
+                </td>
+                <td>
+                    <a href="{% url 'show_applicant' applicant.id %}">
+                        {{applicant.name}}
+                    </a>
+                </td>
+                <td>{{applicant.course}}</td>
+                <td>{{applicant.phone}}</td>
+                <td>
+                    {% if applicant.verified %}
+                    <i class="fas fa-check-circle text-success"></i>
+                    {% else %}
+                    <i class="fas fa-times-circle text-danger"></i>
+                    {% endif %}
+                </td>
+                <td>
+                    <div>
+                        <a href="{% url 'admit_student' applicant.id %}" class="btn btn-sm btn-outline-success">Admit</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

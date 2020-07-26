@@ -1,0 +1,33 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<h5 class="font-Bahnschrift text-dark">Students list</h5>
+<table class="table table-striped table-inverse">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <td>
+                    <img src="{{student.applicant.image.url}}" width="50">
+                </td>
+                <td>
+                    <a href="{% url 'show_student' student.id %}">
+                        {{student.applicant.name}}
+                    </a>
+                </td>
+                <td>{{student.applicant.course}}</td>
+                <td>{{student.applicant.phone}}</td>
+                <td>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

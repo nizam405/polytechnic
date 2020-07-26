@@ -1,0 +1,19 @@
+{% extends extends_file %}
+{% block content %}
+{% if header %}
+    {% include header %}
+{% endif %}
+
+<h5 class="display-3 font-Bahnschrift text-warning">Are you sure?</h5>
+<h5>{{content}}</h5>
+{% if warning_list %}
+    <ul>
+    {% for warning in warning_list %}
+        <li>{{warning}}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<a class="btn btn-sm btn-danger" href="{% url delete_url id %}" role="button"><i class="fas fa-trash-alt"></i> {{delete_text}}</a>
+<a class="btn btn-sm btn-success" href="{% url no_url id %}" role="button">No</a>
+{% endblock content %}
