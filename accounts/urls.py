@@ -46,5 +46,5 @@ urlpatterns = [
         name='password_change_done'),
     path('delete-account/', views.delete_account, name='delete_account'),
     path('confirm_delete-account/', views.confirm_delete_account, name='confirm_delete_account'),
-       
+    
 ]
